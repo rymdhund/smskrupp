@@ -1,11 +1,17 @@
-<h2>Login</h2>
-{% if error %}<p class=error><strong>Error:</strong> {{ error }}{% endif %}
-<form action="{{ url_for('login') }}" method=post>
-<dl>
-  <dt>Username:
-  <dd><input type=text name=username>
-  <dt>Password:
-  <dd><input type=password name=pw>
-  <dd><input type=submit value=Login>
-</dl>
-</form>
+<html>
+  <body>
+    {% for message in get_flashed_messages() %}
+      <div class=flash>{{ message }}</div>
+    {% endfor %}
+    <h2>Login</h2>
+    <form action="{{ url_for('login') }}" method=post>
+    <dl>
+      <dt>Username:
+      <dd><input type=text name=username>
+      <dt>Password:
+      <dd><input type=password name=pw>
+      <dd><input type=submit value=Login>
+    </dl>
+    </form>
+  </body>
+</html>
