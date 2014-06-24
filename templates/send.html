@@ -1,6 +1,7 @@
 <html>
     <head></head>
     <body>
+      <a href={{ url_for('logout') }}>logout</a>
       {% for message in get_flashed_messages() %}
           <div class=flash>{{ message }}</div>
       {% endfor %}
